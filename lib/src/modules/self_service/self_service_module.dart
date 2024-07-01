@@ -26,6 +26,7 @@ final class SelfServiceModule extends FlutterGetItModule {
           (i) => PatientsRepositoryImpl(restClient: i()),
         ),
       ];
+
   @override
   String get moduleRouteName => '/self-service';
 
