@@ -6,10 +6,10 @@ import '../../../models/patient_model.dart';
 import '../../../repositories/patients/patients_repository.dart';
 
 final class FindPatientController with MessagesControllerMixin {
-  final _patientNotFound = ValueSignal<bool?>(null, autoDispose: true);
+  final _patientNotFound = Signal<bool?>(null, autoDispose: true);
   bool? get patientNotFound => _patientNotFound();
 
-  final _patient = ValueSignal<PatientModel?>(null, autoDispose: true);
+  final _patient = Signal<PatientModel?>(null, autoDispose: true);
   PatientModel? get patient => _patient();
 
   final PatientsRepository _patientsRepository;
@@ -37,7 +37,7 @@ final class FindPatientController with MessagesControllerMixin {
     }
     batch<void>(() {
       _patient.value = patient;
-      _patientNotFound.forceUpdate(patientNotFound);
+      _patientNotFound.set(patientNotFound, force: true);
     });
   }
 

@@ -87,7 +87,8 @@ final class DonePage extends StatelessWidget {
                         child: SizedBox(
                           height: 48,
                           child: OutlinedButton(
-                            // TODO(roveri): Create a method to send password via SMS
+                            // TODO(roveri): Create a method to send password
+                            // via SMS
                             onPressed: UnimplementedError.new,
                             child: Text('ENVIAR SENHA VIA SMS'),
                           ),

@@ -69,10 +69,10 @@ packages:
     dependency: "direct main"
     description:
       name: brasil_fields
-      sha256: "33b419e732079637831e88b118ba0e7caa17a798afd86081b3bc568d4fee2748"
+      sha256: "6c802e8629d8e5c81af32d611d1cf260d7ecc86b99e27c127f64490bf1606256"
       url: "https://pub.dev"
     source: hosted
-    version: "1.14.3"
+    version: "1.15.0"
   build:
     dependency: transitive
     description:
@@ -141,18 +141,18 @@ packages:
     dependency: "direct main"
     description:
       name: camera
-      sha256: dfa8fc5a1adaeb95e7a54d86a5bd56f4bb0e035515354c8ac6d262e35cec2ec8
+      sha256: "2170a943dcb67be2af2c6bcda8775e74b41d4c02d6a4eb10bdc832ee185c4eea"
       url: "https://pub.dev"
     source: hosted
-    version: "0.10.6"
-  camera_android:
+    version: "0.11.0+1"
+  camera_android_camerax:
     dependency: transitive
     description:
-      name: camera_android
-      sha256: b350ac087f111467e705b2b76cc1322f7f5bdc122aa83b4b243b0872f390d229
+      name: camera_android_camerax
+      sha256: "7abb0faddbf103c59365e805ad9a30ab4d602b2eb7a8de469697945fd4a69daa"
       url: "https://pub.dev"
     source: hosted
-    version: "0.10.9+2"
+    version: "0.6.5+6"
   camera_avfoundation:
     dependency: transitive
     description:
@@ -277,10 +277,18 @@ packages:
     dependency: "direct main"
     description:
       name: dio
-      sha256: "11e40df547d418cc0c4900a9318b26304e665da6fa4755399a9ff9efd09034b5"
+      sha256: e17f6b3097b8c51b72c74c9f071a605c47bcc8893839bd66732457a5ebe73714
       url: "https://pub.dev"
     source: hosted
-    version: "5.4.3+1"
+    version: "5.5.0+1"
+  dio_web_adapter:
+    dependency: transitive
+    description:
+      name: dio_web_adapter
+      sha256: "36c5b2d79eb17cdae41e974b7a8284fec631651d2a6f39a8a2ff22327e90aeac"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   dotted_border:
     dependency: "direct main"
     description:
@@ -694,26 +702,26 @@ packages:
     dependency: transitive
     description:
       name: signals
-      sha256: a411a60a180570d23446ed233bbf7330384188d446302a47c032f3c14e4fc6cb
+      sha256: "94927d4069a158a6a20ad98990e6c67faeeed4ae6af681c1696fb98f3fbd5d2e"
       url: "https://pub.dev"
     source: hosted
-    version: "4.5.1"
+    version: "5.2.2"
   signals_core:
     dependency: transitive
     description:
       name: signals_core
-      sha256: "29258212f4e89297e7a6abbc0a000fda934bfa6d8b5634c30ce31ec1033bf9e4"
+      sha256: e5888685b9a3cff7c9814bd433195b1f76d0bfa3eae135e0a2f4ff5c48a56a1c
       url: "https://pub.dev"
     source: hosted
-    version: "4.5.0"
+    version: "5.2.2"
   signals_flutter:
     dependency: "direct main"
     description:
       name: signals_flutter
-      sha256: dd4971b2a0165d1ef8de1a45d59e89cdcdd5fc1c8f7fa180d55e6d049be89e92
+      sha256: "1c202bc5136fbe1d8d71b66202e8f71bc10b957ca678c1f44d0d3af2aeb678cc"
       url: "https://pub.dev"
     source: hosted
-    version: "4.5.1"
+    version: "5.2.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -896,5 +904,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.3.3 <4.0.0"
-  flutter: ">=3.19.0"
+  dart: ">=3.4.3 <4.0.0"
+  flutter: ">=3.22.0"
