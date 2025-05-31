@@ -24,9 +24,9 @@ final class _DocumentsPageState extends State<DocumentsPage> {
   }
 
   Future<void> _onTapDocumentBox(DocumentType documentType) async {
-    final filePath = await Navigator.of(context).pushNamed<Object?>(
-      '/self-service/documents/scan',
-    );
+    final filePath = await Navigator.of(
+      context,
+    ).pushNamed<Object?>('/self-service/documents/scan');
 
     if (filePath != null && filePath != '') {
       _selfServiceController.registerDocument(documentType, filePath as String);

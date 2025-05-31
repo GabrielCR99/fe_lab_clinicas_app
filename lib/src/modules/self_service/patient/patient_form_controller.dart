@@ -40,40 +40,40 @@ base mixin PatientFormController on State<PatientPage> {
   }
 
   PatientModel updatePatient(PatientModel patient) => patient.copyWith(
-        name: nameEc.text,
-        email: emailEc.text,
-        phoneNumber: phoneEc.text,
-        document: documentEc.text,
-        address: patient.address.copyWith(
-          cep: cepEc.text,
-          streetAddress: streetEc.text,
-          number: numberEc.text,
-          complement: complementEc.text,
-          state: stateEc.text,
-          city: cityEc.text,
-          district: districtEc.text,
-        ),
-        guardian: guardianEc.text,
-        guardianIdentificationNumber: guardianIdentificationNumberEc.text,
-      );
+    name: nameEc.text,
+    email: emailEc.text,
+    phoneNumber: phoneEc.text,
+    document: documentEc.text,
+    address: patient.address.copyWith(
+      cep: cepEc.text,
+      streetAddress: streetEc.text,
+      number: numberEc.text,
+      complement: complementEc.text,
+      state: stateEc.text,
+      city: cityEc.text,
+      district: districtEc.text,
+    ),
+    guardian: guardianEc.text,
+    guardianIdentificationNumber: guardianIdentificationNumberEc.text,
+  );
 
   RegisterPatientModel createPatientRegister() => (
-        name: nameEc.text,
-        email: emailEc.text,
-        phoneNumber: phoneEc.text,
-        document: documentEc.text,
-        address: (
-          cep: cepEc.text,
-          streetAddress: streetEc.text,
-          number: numberEc.text,
-          addressComplement: complementEc.text,
-          state: stateEc.text,
-          city: cityEc.text,
-          district: districtEc.text,
-        ),
-        guardian: guardianEc.text,
-        guardianIdentificationNumber: guardianIdentificationNumberEc.text,
-      );
+    name: nameEc.text,
+    email: emailEc.text,
+    phoneNumber: phoneEc.text,
+    document: documentEc.text,
+    address: (
+      cep: cepEc.text,
+      streetAddress: streetEc.text,
+      number: numberEc.text,
+      addressComplement: complementEc.text,
+      state: stateEc.text,
+      city: cityEc.text,
+      district: districtEc.text,
+    ),
+    guardian: guardianEc.text,
+    guardianIdentificationNumber: guardianIdentificationNumberEc.text,
+  );
 
   @override
   void dispose() {

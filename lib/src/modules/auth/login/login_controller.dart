@@ -14,7 +14,7 @@ final class LoginController with MessagesControllerMixin {
   final UserLoginService _userLoginService;
 
   LoginController({required UserLoginService userLoginService})
-      : _userLoginService = userLoginService;
+    : _userLoginService = userLoginService;
 
   void toggleObscurePassword() =>
       _obscurePassword.value = !_obscurePassword.value;

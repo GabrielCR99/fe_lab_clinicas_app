@@ -9,11 +9,10 @@ final class FindPatientRouter extends FlutterGetItModulePageRouter {
 
   @override
   List<Bind<Object>> get bindings => [
-        Bind.lazySingleton(
-          (i) => FindPatientController(patientsRepository: i()),
-        ),
-      ];
+    Bind.lazySingleton((i) => FindPatientController(patientsRepository: i())),
+  ];
 
   @override
-  WidgetBuilder get view => (_) => const FindPatientPage();
+  WidgetBuilder get view =>
+      (_) => const FindPatientPage();
 }

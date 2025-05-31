@@ -36,8 +36,10 @@ final class PatientsRepositoryImpl implements PatientsRepository {
   @override
   Future<Either<RepositoryException, Unit>> update(PatientModel patient) async {
     try {
-      await restClient.auth
-          .put<void>('/patients/${patient.id}', data: patient.toJson());
+      await restClient.auth.put<void>(
+        '/patients/${patient.id}',
+        data: patient.toJson(),
+      );
 
       return const Right(unit);
     } on DioException catch (e, s) {

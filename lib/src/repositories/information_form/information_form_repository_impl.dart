@@ -25,8 +25,8 @@ final class InformationFormRepositoryImpl implements InformationFormRepository {
         patient: PatientModel(id: patientId)!,
         documents: {
           DocumentType.healthInsuranceCard: List(first: healthInsuranceCardDoc),
-          DocumentType.medicalOrder: medicalOrderDocs
-        }!
+          DocumentType.medicalOrder: medicalOrderDocs,
+        }!,
       ) = model;
 
       await restClient.post<void>(

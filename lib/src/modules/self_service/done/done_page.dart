@@ -42,8 +42,10 @@ final class DonePage extends StatelessWidget {
                       color: orangeColor,
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                     ),
-                    constraints:
-                        const BoxConstraints(minWidth: 218, minHeight: 48),
+                    constraints: const BoxConstraints(
+                      minWidth: 218,
+                      minHeight: 48,
+                    ),
                     child: Text(
                       _selfServiceController.password,
                       style: const TextStyle(

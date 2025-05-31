@@ -15,11 +15,12 @@ final class FindPatientController with MessagesControllerMixin {
   final PatientsRepository _patientsRepository;
 
   FindPatientController({required PatientsRepository patientsRepository})
-      : _patientsRepository = patientsRepository;
+    : _patientsRepository = patientsRepository;
 
   Future<void> findPatientByDocument(String document) async {
-    final result =
-        await _patientsRepository.findPatientByDocument(document).asyncLoader();
+    final result = await _patientsRepository
+        .findPatientByDocument(document)
+        .asyncLoader();
 
     bool patientNotFound;
     PatientModel? patient;
@@ -42,7 +43,7 @@ final class FindPatientController with MessagesControllerMixin {
   }
 
   void continueWithoutDocument() => batch<void>(() {
-        _patient.value = null;
-        _patientNotFound.set(true, force: true);
-      });
+    _patient.value = null;
+    _patientNotFound.set(true, force: true);
+  });
 }

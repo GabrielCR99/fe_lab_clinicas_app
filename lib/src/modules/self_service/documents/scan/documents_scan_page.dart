@@ -65,41 +65,43 @@ final class _DocumentsScanPageState extends State<DocumentsScanPage> {
                   future: _cameraController.initialize(),
                   builder: (context, snapshot) => switch (snapshot) {
                     AsyncSnapshot(
-                      connectionState:
-                          ConnectionState.waiting || ConnectionState.active
+                      connectionState: ConnectionState.waiting ||
+                          ConnectionState.active,
                     ) =>
                       const CircularProgressIndicator.adaptive(),
                     AsyncSnapshot(connectionState: ConnectionState.done)
                         when _cameraController.value.isInitialized =>
                       ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(16)),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(16),
+                        ),
                         child: SizedBox(
                           width: sizeOf.width * 0.45,
                           child: CameraPreview(
                             _cameraController,
-                            child: DottedBorder(
-                              color: orangeColor,
-                              strokeWidth: 4,
-                              borderType: BorderType.RRect,
-                              dashPattern: const [1, 10, 1, 3],
-                              radius: const Radius.circular(16),
-                              strokeCap: StrokeCap.square,
-                              child: const SizedBox.expand(),
+                            child: const DottedBorder(
+                              options: RoundedRectDottedBorderOptions(
+                                color: orangeColor,
+                                strokeWidth: 4,
+                                dashPattern: [1, 10, 1, 3],
+                                radius: Radius.circular(16),
+                                strokeCap: StrokeCap.square,
+                              ),
+                              child: SizedBox.expand(),
                             ),
                           ),
                         ),
                       ),
                     _ => const Center(
-                        child: Text(
-                          'Erro ao inicializar a câmera',
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
+                      child: Text(
+                        'Erro ao inicializar a câmera',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
+                    ),
                   },
                 ),
                 const SizedBox(height: 24),

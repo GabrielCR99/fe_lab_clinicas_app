@@ -43,16 +43,15 @@ final class PatientModel {
     PatientAddressModel? address,
     String? guardian,
     String? guardianIdentificationNumber,
-  }) =>
-      PatientModel(
-        id: id ?? this.id,
-        name: name ?? this.name,
-        email: email ?? this.email,
-        phoneNumber: phoneNumber ?? this.phoneNumber,
-        document: document ?? this.document,
-        address: address ?? this.address,
-        guardian: guardian ?? this.guardian,
-        guardianIdentificationNumber:
-            guardianIdentificationNumber ?? this.guardianIdentificationNumber,
-      );
+  }) => PatientModel(
+    id: id ?? this.id,
+    name: name ?? this.name,
+    email: email ?? this.email,
+    phoneNumber: phoneNumber ?? this.phoneNumber,
+    document: document ?? this.document,
+    address: address ?? this.address,
+    guardian: guardian ?? this.guardian,
+    guardianIdentificationNumber:
+        guardianIdentificationNumber ?? this.guardianIdentificationNumber,
+  );
 }

@@ -17,8 +17,9 @@ final class UserRepositoryImpl implements UserRepository {
     required String password,
   }) async {
     try {
-      final Response(data: {'access_token': String accessToken}!) =
-          await restClient.unAuth.post<Map<String, dynamic>?>(
+      final Response(
+        data: {'access_token': String accessToken}!,
+      ) = await restClient.unAuth.post<Map<String, dynamic>?>(
         '/auth',
         data: {'email': email, 'password': password, 'admin': true},
       );

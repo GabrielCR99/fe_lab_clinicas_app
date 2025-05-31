@@ -35,14 +35,13 @@ final class PatientAddressModel {
     String? district,
     String? number,
     String? complement,
-  }) =>
-      PatientAddressModel(
-        cep: cep ?? this.cep,
-        streetAddress: streetAddress ?? this.streetAddress,
-        state: state ?? this.state,
-        city: city ?? this.city,
-        district: district ?? this.district,
-        number: number ?? this.number,
-        complement: complement ?? this.complement,
-      );
+  }) => PatientAddressModel(
+    cep: cep ?? this.cep,
+    streetAddress: streetAddress ?? this.streetAddress,
+    state: state ?? this.state,
+    city: city ?? this.city,
+    district: district ?? this.district,
+    number: number ?? this.number,
+    complement: complement ?? this.complement,
+  );
 }

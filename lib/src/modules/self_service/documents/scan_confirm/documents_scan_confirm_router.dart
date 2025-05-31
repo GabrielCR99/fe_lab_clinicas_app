@@ -11,13 +11,14 @@ final class DocumentsScanConfirmRouter extends FlutterGetItModulePageRouter {
 
   @override
   List<Bind<Object>> get bindings => [
-        Bind.lazySingleton<DocumentsRepository>(
-          (i) => DocumentsRepositoryImpl(restClient: i()),
-        ),
-        Bind.lazySingleton(
-          (i) => DocumentsScanConfirmController(documentsRepository: i()),
-        ),
-      ];
+    Bind.lazySingleton<DocumentsRepository>(
+      (i) => DocumentsRepositoryImpl(restClient: i()),
+    ),
+    Bind.lazySingleton(
+      (i) => DocumentsScanConfirmController(documentsRepository: i()),
+    ),
+  ];
   @override
-  WidgetBuilder get view => (_) => const DocumentsScanConfirmPage();
+  WidgetBuilder get view =>
+      (_) => const DocumentsScanConfirmPage();
 }

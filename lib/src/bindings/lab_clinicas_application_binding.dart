@@ -6,6 +6,6 @@ import '../core/env.dart';
 final class LabClinicasApplicationBinding extends ApplicationBindings {
   @override
   List<Bind<Object>> bindings() => [
-        Bind.lazySingleton((_) => RestClient(baseUrl: backendBaseUrl)),
-      ];
+    Bind.lazySingleton((_) => RestClient(baseUrl: backendBaseUrl)),
+  ];
 }

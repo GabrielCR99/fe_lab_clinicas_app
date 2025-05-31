@@ -6,27 +6,36 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_clinicas_core/lab_clinicas_core.dart';
-import 'package:signals_flutter/signals_flutter.dart';
 
 import '../../widgets/lab_clinicas_self_service_app_bar.dart';
 import 'documents_scan_confirm_controller.dart';
 
-final class DocumentsScanConfirmPage extends StatelessWidget {
+final class DocumentsScanConfirmPage extends StatefulWidget {
   const DocumentsScanConfirmPage({super.key});
 
+  @override
+  State<DocumentsScanConfirmPage> createState() =>
+      _DocumentsScanConfirmPageState();
+}
+
+final class _DocumentsScanConfirmPageState
+    extends State<DocumentsScanConfirmPage> {
   static final _controller = Injector.get<DocumentsScanConfirmController>();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller.pathRemoteStorage.addListener(
+      () => Navigator.of(context)
+        ..pop<void>()
+        ..pop<String?>(_controller.pathRemoteStorage.value),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final sizeOf = MediaQuery.sizeOf(context);
     final photo = ModalRoute.of(context)?.settings.arguments as XFile?;
-
-    _controller.pathRemoteStorage.listen(
-      context,
-      () => Navigator.of(context)
-        ..pop<void>()
-        ..pop<String?>(_controller.pathRemoteStorage.value),
-    );
 
     return Scaffold(
       appBar: LabClinicasSelfServiceAppBar(),
@@ -53,12 +62,13 @@ final class DocumentsScanConfirmPage extends StatelessWidget {
                   child: SizedBox(
                     width: sizeOf.width * 0.5,
                     child: DottedBorder(
-                      color: orangeColor,
-                      strokeWidth: 4,
-                      borderType: BorderType.RRect,
-                      dashPattern: const [1, 10, 1, 3],
-                      radius: const Radius.circular(16),
-                      strokeCap: StrokeCap.square,
+                      options: const RoundedRectDottedBorderOptions(
+                        color: orangeColor,
+                        strokeWidth: 4,
+                        dashPattern: [1, 10, 1, 3],
+                        radius: Radius.circular(16),
+                        strokeCap: StrokeCap.square,
+                      ),
                       child: Image.file(File(photo?.path ?? '')),
                     ),
                   ),

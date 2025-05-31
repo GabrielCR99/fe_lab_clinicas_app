@@ -19,7 +19,7 @@ final class _WhoIAmPageState extends State<WhoIAmPage> {
   final _lastNameEC = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  void _onPopInvoked(bool _) {
+  void _onPopInvoked(bool _, Object? __) {
     _nameEC.clear();
     _lastNameEC.clear();
     _controller.clearForm();
@@ -41,7 +41,7 @@ final class _WhoIAmPageState extends State<WhoIAmPage> {
 
     return PopScope(
       canPop: false,
-      onPopInvoked: _onPopInvoked,
+      onPopInvokedWithResult: _onPopInvoked,
       child: Scaffold(
         appBar: LabClinicasAppBar(
           actions: [
@@ -96,8 +96,9 @@ final class _WhoIAmPageState extends State<WhoIAmPage> {
                           decoration: const InputDecoration(
                             labelText: 'Digite seu sobrenome',
                           ),
-                          validator:
-                              Validatorless.required('Digite seu sobrenome'),
+                          validator: Validatorless.required(
+                            'Digite seu sobrenome',
+                          ),
                         ),
                         const SizedBox(height: 24),
                         SizedBox(
@@ -106,12 +107,12 @@ final class _WhoIAmPageState extends State<WhoIAmPage> {
                           child: ElevatedButton(
                             onPressed: () =>
                                 switch (_formKey.currentState?.validate()) {
-                              null || false => null,
-                              true => _controller.setWhoIAmDataStepAndNext(
-                                  name: _nameEC.text,
-                                  lastName: _lastNameEC.text,
-                                ),
-                            },
+                                  null || false => null,
+                                  true => _controller.setWhoIAmDataStepAndNext(
+                                    name: _nameEC.text,
+                                    lastName: _lastNameEC.text,
+                                  ),
+                                },
                             child: const Text('CONTINUAR'),
                           ),
                         ),

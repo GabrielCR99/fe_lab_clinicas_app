@@ -18,27 +18,27 @@ import 'who_i_am/who_i_am_page.dart';
 final class SelfServiceModule extends FlutterGetItModule {
   @override
   List<Bind<Object>> get bindings => [
-        Bind.lazySingleton<InformationFormRepository>(
-          (i) => InformationFormRepositoryImpl(restClient: i()),
-        ),
-        Bind.lazySingleton((i) => SelfServiceController(repository: i())),
-        Bind.lazySingleton<PatientsRepository>(
-          (i) => PatientsRepositoryImpl(restClient: i()),
-        ),
-      ];
+    Bind.lazySingleton<InformationFormRepository>(
+      (i) => InformationFormRepositoryImpl(restClient: i()),
+    ),
+    Bind.lazySingleton((i) => SelfServiceController(repository: i())),
+    Bind.lazySingleton<PatientsRepository>(
+      (i) => PatientsRepositoryImpl(restClient: i()),
+    ),
+  ];
 
   @override
   String get moduleRouteName => '/self-service';
 
   @override
   Map<String, WidgetBuilder> get pages => {
-        '/': (_) => const SelfServicePage(),
-        '/who-i-am': (_) => const WhoIAmPage(),
-        '/find-patient': (_) => const FindPatientRouter(),
-        '/patient': (_) => const PatientRouter(),
-        '/documents': (_) => const DocumentsPage(),
-        '/documents/scan': (_) => const DocumentsScanPage(),
-        '/documents/scan/confirm': (_) => const DocumentsScanConfirmRouter(),
-        '/done': (_) => const DonePage(),
-      };
+    '/': (_) => const SelfServicePage(),
+    '/who-i-am': (_) => const WhoIAmPage(),
+    '/find-patient': (_) => const FindPatientRouter(),
+    '/patient': (_) => const PatientRouter(),
+    '/documents': (_) => const DocumentsPage(),
+    '/documents/scan': (_) => const DocumentsScanPage(),
+    '/documents/scan/confirm': (_) => const DocumentsScanConfirmRouter(),
+    '/done': (_) => const DonePage(),
+  };
 }

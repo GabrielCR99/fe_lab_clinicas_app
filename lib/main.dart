@@ -9,16 +9,16 @@ import 'app_widget.dart';
 late final List<CameraDescription> cameras;
 
 void main() => runZonedGuarded<void>(
-      () async {
-        WidgetsFlutterBinding.ensureInitialized();
-        cameras = await availableCameras();
+  () async {
+    WidgetsFlutterBinding.ensureInitialized();
+    cameras = await availableCameras();
 
-        return runApp(const AppWidget());
-      },
-      (error, stackTrace) {
-        log('runZonedGuarded: $error');
-        log('runZonedGuarded: $stackTrace');
+    return runApp(const AppWidget());
+  },
+  (error, stackTrace) {
+    log('runZonedGuarded: $error');
+    log('runZonedGuarded: $stackTrace');
 
-        Error.throwWithStackTrace(error, stackTrace);
-      },
-    );
+    Error.throwWithStackTrace(error, stackTrace);
+  },
+);

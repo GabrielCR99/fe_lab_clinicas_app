@@ -92,12 +92,12 @@ final class _LoginPageState extends State<LoginPage> {
                       child: ElevatedButton(
                         onPressed: () =>
                             switch (_formKey.currentState?.validate()) {
-                          null || false => null,
-                          true => _controller.login(
-                              email: _emailEC.text,
-                              password: _passwordEC.text,
-                            ),
-                        },
+                              null || false => null,
+                              true => _controller.login(
+                                email: _emailEC.text,
+                                password: _passwordEC.text,
+                              ),
+                            },
                         child: const Text('ENTRAR'),
                       ),
                     ),

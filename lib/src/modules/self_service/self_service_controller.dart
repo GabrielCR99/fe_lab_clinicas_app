@@ -6,15 +6,7 @@ import '../../models/patient_model.dart';
 import '../../models/self_service_model.dart';
 import '../../repositories/information_form/information_form_repository.dart';
 
-enum FormSteps {
-  none,
-  whoIAm,
-  findPatient,
-  patient,
-  documents,
-  done,
-  restart;
-}
+enum FormSteps { none, whoIAm, findPatient, patient, documents, done, restart }
 
 final class SelfServiceController with MessagesControllerMixin {
   var password = '';
@@ -27,7 +19,7 @@ final class SelfServiceController with MessagesControllerMixin {
   final InformationFormRepository _repository;
 
   SelfServiceController({required InformationFormRepository repository})
-      : _repository = repository;
+    : _repository = repository;
 
   void startProcess() => _step.set(FormSteps.whoIAm);
 

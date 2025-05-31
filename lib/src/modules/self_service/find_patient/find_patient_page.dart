@@ -112,10 +112,11 @@ final class _FindPatientPageState extends State<FindPatientPage> {
                         child: ElevatedButton(
                           onPressed: () =>
                               switch (_formKey.currentState?.validate()) {
-                            null || false => null,
-                            true =>
-                              _controller.findPatientByDocument(_cpfEC.text),
-                          },
+                                null || false => null,
+                                true => _controller.findPatientByDocument(
+                                  _cpfEC.text,
+                                ),
+                              },
                           child: const Text('CONTINUAR'),
                         ),
                       ),

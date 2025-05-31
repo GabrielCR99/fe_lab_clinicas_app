@@ -14,7 +14,7 @@ final class PatientController with MessagesControllerMixin {
   final PatientsRepository _patientsRepository;
 
   PatientController({required PatientsRepository patientsRepository})
-      : _patientsRepository = patientsRepository;
+    : _patientsRepository = patientsRepository;
 
   void goToNextStep() => _nextStep.value = true;
 
@@ -34,8 +34,9 @@ final class PatientController with MessagesControllerMixin {
   Future<void> saveAndGoToNext(
     RegisterPatientModel registerPatientModel,
   ) async {
-    final result =
-        await _patientsRepository.register(registerPatientModel).asyncLoader();
+    final result = await _patientsRepository
+        .register(registerPatientModel)
+        .asyncLoader();
 
     switch (result) {
       case Left():
